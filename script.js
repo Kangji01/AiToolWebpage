@@ -17,10 +17,10 @@ const tools = [
     },
     {
       id: 3,
-      name: "Codeium",
+      name: "Windsurf",
       description: "무료 사용 가능한 Copilot 대안. 빠른 자동 완성과 실시간 추천 제공.",
-      image: "https://codeium.com/img/favicon.ico",
-      link: "https://codeium.com",
+      image: "https://windsurf.com/logo/navbar_windsurf_logo.svg",
+      link: "https://windsurf.com/",
       rating: 4.6
     }
   ];
