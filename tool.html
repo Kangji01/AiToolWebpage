@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>🔍 도구 상세 보기</h1>
+    <h1>도구 상세 정보</h1>
     <nav>
       <ul>
         <li><a href="index.html">홈</a></li>
@@ -20,10 +20,16 @@
   <main>
     <section id="tool-detail">
       <!-- JavaScript로 도구 상세 정보 출력 -->
+      <h2 id="tool-name"></h2>
+      <img id="tool-image" src="" alt="도구 이미지">
+      <p id="tool-description"></p>
+      <a id="tool-link" href="#" target="_blank">🔗 공식 사이트로 가기</a>
+    
+      <p id="avg-rating">⭐ 평균 별점: </p>
     </section>
 
     <section id="review-section">
-      <h3>이 도구에 대한 리뷰 작성</h3>
+      <h3>리뷰 작성</h3>
       <form id="review-form">
         <label for="review">리뷰:</label><br />
         <textarea id="review" required></textarea><br />
@@ -32,7 +38,7 @@
         <button type="submit">등록</button>
       </form>
 
-      <h3>유저 리뷰</h3>
+      <h3>리뷰 목록</h3>
       <ul id="review-list"></ul>
     </section>
   </main>
