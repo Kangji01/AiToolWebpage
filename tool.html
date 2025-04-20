@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>도구 상세</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🔍 도구 상세 보기</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="reviews.html">리뷰</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tool-detail">
+      <!-- JavaScript로 도구 상세 정보 출력 -->
+    </section>
+
+    <section id="review-section">
+      <h3>📝 이 도구에 대한 리뷰 작성</h3>
+      <form id="review-form">
+        <label for="review">리뷰:</label><br />
+        <textarea id="review" required></textarea><br />
+        <label for="rating">평점 (1~5):</label>
+        <input type="number" id="rating" min="1" max="5" required />
+        <button type="submit">등록</button>
+      </form>
+
+      <h3>💬 유저 리뷰</h3>
+      <ul id="review-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AI Coding Tools Hub</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
