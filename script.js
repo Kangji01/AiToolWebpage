@@ -28,12 +28,100 @@ const tools = [
     rating: 4.6,
     baseCount: 10,
     videoUrl: "" // 영상 없는 경우는 빈 문자열
+  },
+  {
+    id: 4,
+    name: "Tabnine",
+    description: "AI 기반 코드 자동완성 툴. 다양한 IDE 지원.",
+    image: "https://tabnine.com/favicon.ico",
+    link: "https://www.tabnine.com/",
+    rating: 4.5,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_4"
+  },
+  {
+    id: 5,
+    name: "Replit",
+    description: "AI 기반 코드 작성 및 디버깅 도구. 실시간 협업 가능.",
+    image: "https://replit.com/favicon.ico",
+    link: "https://replit.com/",
+    rating: 4.4,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_5"
+  },
+  {
+    id: 6,
+    name: "Kite",
+    description: "AI 기반 코드 자동완성 도구. Python, JavaScript 등 지원.",
+    image: "https://kite.com/favicon.ico",
+    link: "https://www.kite.com/",
+    rating: 4.3,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6"
+  },
+  {
+    id: 7,
+    name: "IntelliCode",
+    description: "Microsoft의 AI 기반 코드 추천 도구. Visual Studio에서 사용 가능.", 
+    image: "https://visualstudio.microsoft.com/favicon.ico",
+    link: "https://visualstudio.microsoft.com/services/intellicode/",
+    rating: 4.2,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_7"
+  },
+  {
+    id: 8,
+    name: "DeepCode",
+    description: "AI 기반 코드 리뷰 및 버그 탐지 도구.",
+    image: "https://deepcode.ai/favicon.ico",
+    link: "https://www.deepcode.ai/",
+    rating: 4.1,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_8"
+  },
+  {
+    id: 9,
+    name: "Codex",
+    description: "OpenAI의 AI 모델을 활용한 코드 생성 도구.",
+    image: "https://openai.com/favicon.ico",
+    link: "https://openai.com/research/codex",
+    rating: 4.0,
+    baseCount: 10,
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_9"
+  },
+  {
+    id: 10,
+    name: "CodeGPT",
+    description: "AI 기반 코드 자동완성 및 디버깅 도구.",
+    image: "https://codegpt.co/favicon.ico",
+    link: "https://www.codegpt.co/",
+    rating: 4.8,
+    baseCount: 10,
+    videoUrl: "" // 영상 없는 경우는 빈 문자열
   }
 ];
 
-// index.html - 도구 목록 출력
-const toolList = document.getElementById("tool-list");
-if (toolList) {
+// index.html - 인기 3개의 도구만 출력
+const indexToolList = document.getElementById("index-tool-list");  // 수정된 부분
+if (indexToolList) {
+  const featuredTools = tools.filter(tool => tool.id <= 3);  // 첫 3개 도구만 출력
+  featuredTools.forEach(tool => {
+    const card = document.createElement("article");
+    card.className = "tool-card";
+    card.innerHTML = `
+      <img src="${tool.image}" alt="${tool.name} 로고">
+      <h3>${tool.name}</h3>
+      <p>${tool.description}</p>
+      <p>⭐ ${tool.rating.toFixed(1)} / 5</p>
+      <button onclick="location.href='tool.html?id=${tool.id}'">자세히 보기</button>
+    `;
+    indexToolList.appendChild(card);
+  });
+}
+
+// catalog.html - 모든 도구 출력
+const catalogToolList = document.getElementById("catalog-list");  // 수정된 부분
+if (catalogToolList) {
   tools.forEach(tool => {
     const card = document.createElement("article");
     card.className = "tool-card";
@@ -44,7 +132,7 @@ if (toolList) {
       <p>⭐ ${tool.rating.toFixed(1)} / 5</p>
       <button onclick="location.href='tool.html?id=${tool.id}'">자세히 보기</button>
     `;
-    toolList.appendChild(card);
+    catalogToolList.appendChild(card);
   });
 }
 
