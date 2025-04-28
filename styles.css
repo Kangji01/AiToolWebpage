@@ -67,3 +67,13 @@ body {
     margin-top: 3em;
   }
   
+  .video-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .video-container iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
