@@ -76,4 +76,33 @@ body {
     max-width: 100%;
     height: auto;
   }
-  
+
+ /* 부모 컨테이너에 flexbox 적용 */
+.content-container {
+  display: flex;
+  flex-direction: row; /* 가로 방향으로 정렬 */
+  justify-content: space-between; /* 왼쪽 콘텐츠와 오른쪽 광고 간 간격 자동 조정 */
+  gap: 20px; /* 두 영역 간의 간격 */
+  margin-bottom: 2em;
+  margin-top: 20px; /* 상단 여백 추가 */
+  width: 100%; /* 부모 컨테이너의 너비를 100%로 설정 */
+}
+
+/* section (왼쪽 콘텐츠) */
+section {
+  flex: 3; /* 콘텐츠 영역 크기 */
+  background: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-right: 20px; /* 오른쪽 광고와의 간격 */
+}
+
+/* aside (오른쪽 광고) */
+aside {
+  flex: 1; /* 광고 영역 크기 */
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd; /* 광고 영역 테두리 */
+}
