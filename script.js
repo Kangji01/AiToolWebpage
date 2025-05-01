@@ -7,7 +7,7 @@ const tools = [
     link: "https://github.com/features/copilot",
     rating: 4.8,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/4RfD5JiXt3A&t=1s" // 여기에 실제 embed 링크
+    videoUrl: "https://github.githubassets.com/assets/features-breakout-agent-mode-4425fdb3e918.mp4" // 여기에 실제 embed 링크
   },
   {
     id: 2,
@@ -21,13 +21,13 @@ const tools = [
   },
   {
     id: 3,
-    name: "Windsurf",
-    description: "무료 사용 가능한 Copilot 대안. 빠른 자동 완성과 실시간 추천 제공.",
-    image: "https://windsurf.com/logo/windsurf_teal_logo.svg",
-    link: "https://windsurf.com/",
-    rating: 4.6,
-    baseCount: 10,
-    videoUrl: "" // 영상 없는 경우는 빈 문자열
+    name: "ChatGPT",
+    description: "OpenAI의 대화형 AI 모델. 코드 작성 및 디버깅에 유용.",
+    image: "https://openai.com/favicon.ico",
+    link: "https://openai.com/chatgpt",
+    rating: 4.3,
+    baseCount: 10,  
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3"
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const tools = [
     id: 5,
     name: "Replit",
     description: "AI 기반 코드 작성 및 디버깅 도구. 실시간 협업 가능.",
-    image: "https://replit.com/favicon.ico",
+    image: "https://play-lh.googleusercontent.com/baV9RL2D0iV8JkTtCzSxeLf6XxCJMWQYbyXMqyQfc0OQGtjkCyUenUbLb5tefYfMxfU",
     link: "https://replit.com/",
     rating: 4.4,
     baseCount: 10,
@@ -51,11 +51,11 @@ const tools = [
   },
   {
     id: 6,
-    name: "Kite",
-    description: "AI 기반 코드 자동완성 도구. Python, JavaScript 등 지원.",
-    image: "https://kite.com/favicon.ico",
-    link: "https://www.kite.com/",
-    rating: 4.3,
+    name: "Windsurf",
+    description: "무료 사용 가능한 Copilot 대안. 빠른 자동 완성과 실시간 추천 제공.(구 Codeium)",
+    image: "https://windsurf.com/logo/windsurf_teal_logo.svg",
+    link: "https://windsurf.com/",
+    rating: 4.6,
     baseCount: 10,
     videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6"
   },
@@ -151,7 +151,7 @@ if (detailSection) {
     if (tool.videoUrl) {
       videoEmbed = `
         <div class="video-container">
-          <iframe width="560" height="315" src="${tool.videoUrl}" frameborder="0" allowfullscreen></iframe>
+          <iframe src="${tool.videoUrl}" frameborder="0" allowfullscreen></iframe>
         </div>
       `;
     }
