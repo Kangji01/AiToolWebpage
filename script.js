@@ -259,3 +259,27 @@ document.addEventListener("DOMContentLoaded", () => {
     updateAverageRating(toolId);
   }
 });
+
+//맨위로/맨아래로 버튼 기능
+document.getElementById("scroll-to-top").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.getElementById("scroll-to-bottom").addEventListener("click", () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+});
+// 스크롤 이벤트로 버튼 보이기/숨기기 
+window.addEventListener("scroll", () => {
+  const scrollTopButton = document.getElementById("scroll-to-top");
+  const scrollBottomButton = document.getElementById("scroll-to-bottom");
+  if (window.scrollY > 300) {
+    scrollTopButton.style.display = "block";
+  } else {
+    scrollTopButton.style.display = "none";
+  }
+  if (window.scrollY < document.body.scrollHeight - window.innerHeight - 300) {
+    scrollBottomButton.style.display = "block";
+  } else {
+    scrollBottomButton.style.display = "none";
+  }
+});
