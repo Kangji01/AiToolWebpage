@@ -124,7 +124,7 @@ footer {
 }
 
 /* 반응형 처리 */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   main {
     flex-direction: column;
   }
