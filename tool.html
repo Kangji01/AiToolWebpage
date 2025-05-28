@@ -2,71 +2,105 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>도구 상세</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detailed information</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-  <header>
-    <h1>도구 상세 정보</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">홈</a></li>
-        <li><a href="reviews.html">리뷰</a></li>
-        <li><a href="catalog.html">목록</a></li>
-      </ul>
-    </nav>
+  <!-- 헤더 -->
+  <header class="bg-dark text-white text-center py-3">
+    <h1>AI SQUARE</h1>
   </header>
 
-  <main>
-    <section class="content-container">
-    <div class="main-content">
-      <div id="tool-detail">
-        <!-- JavaScript로 도구 상세 정보 출력 -->
-        <h2 id="tool-name"></h2>
-        <img id="tool-image" src="" alt="도구 이미지">
-        <p id="tool-description"></p>
-        <a id="tool-link" href="#" target="_blank">🔗 공식 사이트로 가기</a>
-    
-        <p id="avg-rating">⭐ 평균 별점: </p>
-      </div>
-
-      <div id="review-section">
-        <h3>리뷰 작성</h3>
-        <form id="review-form">
-          <label for="review">리뷰:</label><br />
-          <textarea id="review" required></textarea><br />
-          <label for="rating">평점 (1~5):</label>
-          <input type="number" id="rating" min="1" max="5" required />
-          <button type="submit">등록</button>
-        </form>
-
-        <h3>리뷰 목록</h3>
-        <ul id="review-list"></ul>
-      </div>
+  <!-- 네비게이션 -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+        <li class="nav-item"><a class="nav-link" href="reviews.html">리뷰</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">목록</a></li>
+      </ul>
     </div>
-    </section>
+  </nav>
 
-    <aside class="ad-space">
-      <!-- 광고 배너 -->
-      <p>여기 광고가 표시될 예정입니다.</p>
-    </aside>
+  <!-- 메인 콘텐츠 -->
+  <main class="container my-4">
+    <div class="row">
+      <!-- 상세 정보 -->
+      <section class="col-lg-9 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body" id="tool-detail">
+            <!-- JavaScript로 도구 상세 정보 삽입 -->
+          </div>
+        </div>
+
+        <!-- 유튜브 영상 -->
+        <div class="video-container text-center my-4">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/OYbVrFbpZ1g" title="소개 영상" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- 리뷰 입력 폼 -->
+        <div class="card shadow-sm my-4">
+          <div class="card-body">
+            <h5 class="card-title">리뷰 작성</h5>
+            <form id="review-form">
+              <div class="mb-3">
+                <input type="text" id="reviewer-name" class="form-control" placeholder="이름" required />
+              </div>
+              <div class="mb-3">
+                <select id="review-rating" class="form-select" required>
+                  <option value="" disabled selected>별점을 선택하세요</option>
+                  <option value="5">5점</option>
+                  <option value="4">4점</option>
+                  <option value="3">3점</option>
+                  <option value="2">2점</option>
+                  <option value="1">1점</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <textarea id="review-comment" class="form-control" placeholder="리뷰 내용을 입력하세요" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">리뷰 제출</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 평균 별점 -->
+        <p id="avg-rating" class="text-muted">⭐ 평균 별점: -</p>
+
+        <!-- 리뷰 리스트 -->
+        <ul id="review-list" class="list-group">
+          <!-- 리뷰 항목이 여기에 추가됨 -->
+        </ul>
+      </section>
+
+      <!-- 광고 -->
+      <aside class="col-lg-3 mb-4">
+        <div class="card bg-light shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">광고</h5>
+            <p class="card-text">AI 툴 가이드를 확인해보세요!</p>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
 
-  <footer>
+  <!-- 푸터 -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
     <p>&copy; 2025 AI Coding Tools Hub</p>
   </footer>
 
-  <!-- 맨위/맨아래 버튼 -->
-  <div class="scroll-buttons">
-    <button id="scroll-to-top">맨 위로</button>
-    <button id="scroll-to-bottom">맨 아래로</button>
+  <!-- 맨 위/아래 버튼 -->
+  <div class="scroll-buttons position-fixed bottom-0 end-0 p-3 d-flex flex-column gap-2">
+    <button id="scroll-top" class="btn btn-dark">↑ 맨 위로</button>
+    <button id="scroll-bottom" class="btn btn-secondary">↓ 맨 아래로</button>
   </div>
-  
+
+  <!-- Bootstrap & script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   <script src="script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

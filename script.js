@@ -31,13 +31,13 @@ const tools = [
   },
   {
     id: 4,
-    name: "Tabnine",
-    description: "AI 기반 코드 자동완성 툴. 다양한 IDE 지원.",
-    image: "https://tabnine.com/favicon.ico",
-    link: "https://www.tabnine.com/",
-    rating: 4.5,
+    name: "NotebookLM",
+    description: "Google의 AI 기반 코드 작성 도구. 실시간 협업 가능.",
+    image: "https://notebooklm.google/favicon.ico",
+    link: "https://notebooklm.google/",
+    rating: 4.8,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_4"
+    videoUrl: "https://notebooklm.google/_/static/v4/videos/upload_your_sources.mp4" // 영상 없는 경우는 빈 문자열
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const tools = [
     description: "AI 기반 코드 작성 및 디버깅 도구. 실시간 협업 가능.",
     image: "https://play-lh.googleusercontent.com/baV9RL2D0iV8JkTtCzSxeLf6XxCJMWQYbyXMqyQfc0OQGtjkCyUenUbLb5tefYfMxfU",
     link: "https://replit.com/",
-    rating: 4.4,
+    rating: 3.4,
     baseCount: 10,
     videoUrl: "https://www.youtube.com/embed/VIDEO_ID_5"
   },
@@ -55,7 +55,7 @@ const tools = [
     description: "무료 사용 가능한 Copilot 대안. 빠른 자동 완성과 실시간 추천 제공.(구 Codeium)",
     image: "https://windsurf.com/logo/windsurf_teal_logo.svg",
     link: "https://windsurf.com/",
-    rating: 4.6,
+    rating: 3.6,
     baseCount: 10,
     videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6"
   },
@@ -91,52 +91,58 @@ const tools = [
   },
   {
     id: 10,
-    name: "CodeGPT",
-    description: "AI 기반 코드 자동완성 및 디버깅 도구.",
-    image: "https://codegpt.co/favicon.ico",
-    link: "https://www.codegpt.co/",
-    rating: 4.8,
+    name: "Tabnine",
+    description: "AI 기반 코드 자동완성 툴. 다양한 IDE 지원.",
+    image: "https://tabnine.com/favicon.ico",
+    link: "https://www.tabnine.com/",
+    rating: 3.9,
     baseCount: 10,
-    videoUrl: "" // 영상 없는 경우는 빈 문자열
+    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_10"
   }
 ];
 
-// index.html - 인기 3개의 도구만 출력
-const indexToolList = document.getElementById("index-tool-list");  // 수정된 부분
+// index.html - 상위 3개 도구 카드 출력
+const indexToolList = document.getElementById("index-tool-list");
 if (indexToolList) {
-  const featuredTools = tools.filter(tool => tool.id <= 3);  // 첫 3개 도구만 출력
+  const featuredTools = tools.slice(0, 3); // 상위 3개 도구만 표시
   featuredTools.forEach(tool => {
-    const card = document.createElement("article");
-    card.className = "tool-card";
-    card.innerHTML = `
-      <img src="${tool.image}" alt="${tool.name} 로고">
-      <h3>${tool.name}</h3>
-      <p>${tool.description}</p>
-      <p>⭐ ${tool.rating.toFixed(1)} / 5</p>
-      <button onclick="location.href='tool.html?id=${tool.id}'">자세히 보기</button>
+    indexToolList.innerHTML += `
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="${tool.image}" class="card-img-top p-4" alt="${tool.name}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${tool.name}</h5>
+            <p class="card-text">${tool.description}</p>
+            <p class="text-warning">⭐ ${tool.rating.toFixed(1)} / 5</p>
+            <a href="tool.html?id=${tool.id}" class="btn btn-primary mt-auto">자세히 보기</a>
+          </div>
+        </div>
+      </div>
     `;
-    indexToolList.appendChild(card);
   });
 }
 
-// catalog.html - 모든 도구 출력
-const catalogToolList = document.getElementById("catalog-list");  // 수정된 부분
+// catalog.html - 전체 도구 카드 출력
+const catalogToolList = document.getElementById("catalog-list");
 if (catalogToolList) {
   tools.forEach(tool => {
-    const card = document.createElement("article");
-    card.className = "tool-card";
-    card.innerHTML = `
-      <img src="${tool.image}" alt="${tool.name} 로고">
-      <h3>${tool.name}</h3>
-      <p>${tool.description}</p>
-      <p>⭐ ${tool.rating.toFixed(1)} / 5</p>
-      <button onclick="location.href='tool.html?id=${tool.id}'">자세히 보기</button>
+    catalogToolList.innerHTML += `
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="${tool.image}" class="card-img-top p-4" alt="${tool.name}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${tool.name}</h5>
+            <p class="card-text">${tool.description}</p>
+            <p class="text-warning">⭐ ${tool.rating.toFixed(1)} / 5</p>
+            <a href="tool.html?id=${tool.id}" class="btn btn-primary mt-auto">자세히 보기</a>
+          </div>
+        </div>
+      </div>
     `;
-    catalogToolList.appendChild(card);
   });
 }
 
-// tool.html - 도구 상세 + 리뷰 기능
+// tool.html - 상세 + 리뷰
 const detailSection = document.getElementById("tool-detail");
 const reviewForm = document.getElementById("review-form");
 const reviewList = document.getElementById("review-list");
@@ -149,43 +155,56 @@ if (detailSection) {
   if (tool) {
     let videoEmbed = "";
     if (tool.videoUrl) {
-      videoEmbed = `
-        <div class="video-container">
-          <iframe src="${tool.videoUrl}" frameborder="0" allowfullscreen></iframe>
-        </div>
-      `;
+      if (tool.videoUrl.includes("youtube.com")) {
+        videoEmbed = `
+          <div class="video-container text-center my-3">
+            <iframe width="100%" height="315" src="${tool.videoUrl}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        `;
+      } else {
+        videoEmbed = `
+          <div class="video-container text-center my-3">
+            <video controls width="100%">
+              <source src="${tool.videoUrl}" type="video/mp4">
+              지원되지 않는 영상 형식입니다.
+            </video>
+          </div>
+        `;
+      }
     }
 
     detailSection.innerHTML = `
       <h2>${tool.name}</h2>
-      <img src="${tool.image}" alt="${tool.name} 로고" />
+      <img src="${tool.image}" alt="${tool.name} 로고" class="my-3"/>
       <p>${tool.description}</p>
-      <a href="${tool.link}" target="_blank">🔗 공식 사이트 이동</a>
+      <a href="${tool.link}" target="_blank" class="btn btn-outline-primary mb-3">🔗 공식 사이트 이동</a>
       <p id="avg-rating">⭐ 평균 별점: ${tool.rating.toFixed(1)}</p>
       ${videoEmbed}
     `;
   }
 
-  // 리뷰 불러오기
+  // 기존 리뷰 로드
   const saved = JSON.parse(localStorage.getItem(`reviews-${toolId}`)) || [];
   saved.forEach(r => addReviewToList(r));
 
+  // 리뷰 폼 제출
   reviewForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const content = document.getElementById("review").value;
-    const rating = document.getElementById("rating").value;
-    const newReview = { content, rating };
+    const name = document.getElementById("reviewer-name").value;
+    const rating = document.getElementById("review-rating").value;
+    const content = document.getElementById("review-comment").value;
 
+    const newReview = { name, rating, content };
     saved.push(newReview);
     localStorage.setItem(`reviews-${toolId}`, JSON.stringify(saved));
     addReviewToList(newReview);
-
     reviewForm.reset();
-    updateAverageRating(toolId); // ⭐ 리뷰 등록 시 평균 별점 업데이트
+    updateAverageRating(toolId);
   });
 
   function addReviewToList(review) {
     const li = document.createElement("li");
+    li.className = "list-group-item";
     li.textContent = `⭐ ${review.rating}점 - ${review.content}`;
     reviewList.appendChild(li);
   }
@@ -197,25 +216,27 @@ if (fullList) {
   tools.forEach(tool => {
     const saved = JSON.parse(localStorage.getItem(`reviews-${tool.id}`)) || [];
     if (saved.length > 0) {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${tool.name}</strong><ul>${saved.map(r => `<li>⭐ ${r.rating} - ${r.content}</li>`).join("")}</ul>`;
-      fullList.appendChild(li);
+      const reviewHTML = `
+        <div class="mb-4">
+          <h5 class="text-primary">${tool.name}</h5>
+          <ul class="list-group">
+            ${saved.map(r => `<li class="list-group-item">⭐ ${r.rating} - ${r.content}</li>`).join("")}
+          </ul>
+        </div>`;
+      fullList.innerHTML += reviewHTML;
     }
   });
 }
 
-// 별점 계산 함수
+// 별점 계산
 function getAverageRating(toolId) {
   const tool = tools.find(t => t.id === toolId);
   const baseTotal = tool.rating * tool.baseCount;
-
   const reviews = getReviews(toolId);
   const newRatings = reviews.map(r => parseFloat(r.rating));
   const newTotal = newRatings.reduce((a, b) => a + b, 0);
-
   const totalRating = baseTotal + newTotal;
   const totalCount = tool.baseCount + newRatings.length;
-
   return (totalCount === 0) ? "N/A" : (totalRating / totalCount).toFixed(1);
 }
 
@@ -235,51 +256,46 @@ function saveReviews(toolId, reviews) {
   localStorage.setItem(`reviews-${toolId}`, JSON.stringify(reviews));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("review-form");
-  if (form) {
-    const toolId = parseInt(new URLSearchParams(window.location.search).get("id"));
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("reviewer-name").value;
-      const rating = parseInt(document.getElementById("review-rating").value);
-      const comment = document.getElementById("review-comment").value;
-      const newReview = { name, rating, comment };
-
-      const existing = getReviews(toolId);
-      existing.push(newReview);
-      saveReviews(toolId, existing);
-
-      renderReviews(toolId);
-      updateAverageRating(toolId);
-
-      form.reset();
-    });
-
-    updateAverageRating(toolId);
-  }
-});
-
-//맨위로/맨아래로 버튼 기능
-document.getElementById("scroll-to-top").addEventListener("click", () => {
+// 맨 위/아래 버튼
+document.getElementById("scroll-top")?.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-document.getElementById("scroll-to-bottom").addEventListener("click", () => {
+document.getElementById("scroll-bottom")?.addEventListener("click", () => {
   window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 });
-// 스크롤 이벤트로 버튼 보이기/숨기기 
+
+// 스크롤 위치 따라 버튼 보이기/숨기기
 window.addEventListener("scroll", () => {
-  const scrollTopButton = document.getElementById("scroll-to-top");
-  const scrollBottomButton = document.getElementById("scroll-to-bottom");
-  if (window.scrollY > 300) {
-    scrollTopButton.style.display = "block";
-  } else {
-    scrollTopButton.style.display = "none";
+  const scrollTopBtn = document.getElementById("scroll-top");
+  const scrollBottomBtn = document.getElementById("scroll-bottom");
+  const scrolled = window.scrollY;
+  const bottomBuffer = 300;
+  if (scrollTopBtn) scrollTopBtn.style.display = scrolled > 300 ? "block" : "none";
+  if (scrollBottomBtn) {
+    scrollBottomBtn.style.display = (scrolled < document.body.scrollHeight - window.innerHeight - bottomBuffer) ? "block" : "none";
   }
-  if (window.scrollY < document.body.scrollHeight - window.innerHeight - 300) {
-    scrollBottomButton.style.display = "block";
+});
+
+// 네비게이션 바 스크롤 시 숨기기/보이기
+let lastScrollY = window.scrollY;
+const navbar = document.getElementById('main-navbar');
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const headerBottom = header.getBoundingClientRect().bottom;
+
+  if (headerBottom <= 0) {
+    // 헤더가 안 보이면 nav를 fixed로 상단에 고정
+    navbar.classList.add('navbar-fixed');
+    if (window.scrollY > lastScrollY) {
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      navbar.style.transform = 'translateY(0)';
+    }
   } else {
-    scrollBottomButton.style.display = "none";
+    // 헤더가 보이면 nav를 일반 흐름으로 (fixed 해제)
+    navbar.classList.remove('navbar-fixed');
+    navbar.style.transform = 'translateY(0)';
   }
+  lastScrollY = window.scrollY;
 });
