@@ -1,3 +1,4 @@
+//여기 image, link, videoUrl 안채워진거 수정해주세요
 const tools = [
   {
     id: 1,
