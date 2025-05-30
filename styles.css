@@ -1,52 +1,234 @@
-/* 기본 글꼴, 배경 */
+/* =========================
+   기본 글꼴, 전체 배경
+   ========================= */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f9f9f9;
+  background: linear-gradient(120deg, #f7fbff 0%, #e3f0ff 100%);
   color: #333;
   margin: 0;
   padding: 0;
 }
 
-/* 헤더/푸터 */
+/* =========================
+   헤더/푸터 스타일
+   ========================= */
 header,
 footer {
   text-align: center;
 }
 
-footer {
-  margin-top: 3em;
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(79,140,255,0.15);
+  margin-bottom: 0;
 }
 
-/* 툴 카드 레이아웃 (Bootstrap card 내에서 스타일) */
+footer {
+  margin-top: 3em;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   네비게이션 바 스타일
+   ========================= */
+.navbar-nav .nav-link {
+  position: relative;
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #4f8cff;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after,
+.navbar-nav .nav-link.active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* 데스크탑(large)에서 중앙정렬 */
+@media (min-width: 992px) {
+  .navbar-nav {
+    justify-content: center;
+  }
+}
+/* 모바일(작은 화면)에서 네비게이션 중앙정렬 및 밑줄 길이 조정 */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    align-items: center !important;
+    text-align: center;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-nav .nav-link::after {
+    width: 1.6em;
+    left: calc(50% - 0.8em);
+  }
+}
+
+/* =========================
+   툴 카드 레이아웃 & 디자인
+   ========================= */
 .tool-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5em;
+  gap: 2em;
   margin-top: 1em;
+  justify-content: flex-start;
 }
 
+.tool-card,
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  background: #fff;
+  min-height: 320px;
+  margin-bottom: 2em;
+  max-width: 100%;
+  padding: 1.2em 1em 1.2em 1em;
+}
+
+/* 카드 제목 */
+.tool-card .card-title,
+.card .card-title {
+  font-weight: 700;
+  color: #3761a8;
+  margin: 1em 0 0.6em 0;
+  font-size: 1.2rem;
+  word-break: keep-all;
+  text-align: center;
+  padding: 0 1em;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 카드 내부 대표 이미지가 카드 밖으로 넘치지 않게, 잘리지 않게 */
 .tool-card img,
 .card-img-top {
-  max-width: 80px;
+  display: block;
   margin: 0 auto 1em;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  max-height: 180px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+  object-fit: contain;   /* 잘리지 않고 비율 유지 */
+  background: #f7fbff;   /* 투명 이미지 대비 배경 */
 }
 
-.tool-card .card-body {
+/* 모바일에서 이미지가 너무 커지지 않게 추가 제한 */
+@media (max-width: 600px) {
+  .tool-card img,
+  .card-img-top {
+    max-width: 80vw;
+    max-height: 30vw;
+  }
+}
+
+/* 카드 내용 */
+.tool-card .card-body,
+.card .card-body {
   text-align: center;
+  padding: 0 1em 1em 1em;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
-.tool-card .btn {
+.tool-card .btn,
+.card .btn {
   margin-top: auto;
+  border-radius: 24px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #4f8cff 0%, #3761a8 100%);
+  color: #fff;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.12);
+  padding: 0.6em 1.6em;
+}
+.tool-card .btn:hover,
+.card .btn:hover {
+  background: linear-gradient(90deg, #3761a8 0%, #4f8cff 100%);
+  transform: translateY(-2px) scale(1.03);
 }
 
-/* 리뷰 작성 폼 */
+/* =========================
+   별점(★) 스타일
+   ========================= */
+.rating-text {
+  color: #000 !important;
+  font-weight: 500;
+  font-size: 1.05em;
+}
+.rating-text .star {
+  color: #ffd600;
+  font-size: 1.1em;
+  vertical-align: -2px;
+}
+
+/* =========================
+   광고(aside) 카드 스타일
+   ========================= */
+aside .card {
+  background: linear-gradient(135deg, #e3f0ff 0%, #f7fbff 100%);
+  border: none;
+  box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+}
+aside .card-title {
+  color: #4f8cff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* =========================
+   리뷰 작성 폼
+   ========================= */
 form textarea {
   width: 100%;
   height: 80px;
   margin-bottom: 1em;
+  border-radius: 12px;
+  border: 1px solid #d9e6f6;
+  padding: 0.8em;
+  font-size: 1em;
+  resize: vertical;
 }
 
-/* 영상 컨테이너 - iframe/video 공통 */
+/* =========================
+   영상 컨테이너 (iframe/video)
+   ========================= */
 .video-container {
   position: relative;
   width: 100%;
@@ -54,7 +236,6 @@ form textarea {
   margin-top: 20px;
   overflow: hidden;
 }
-
 .video-container iframe,
 .video-container video {
   position: absolute;
@@ -64,7 +245,9 @@ form textarea {
   height: 100%;
 }
 
-/* 맨 위 / 맨 아래 버튼 */
+/* =========================
+   맨 위 / 맨 아래 버튼
+   ========================= */
 .scroll-buttons {
   position: fixed;
   right: 20px;
@@ -74,31 +257,44 @@ form textarea {
   gap: 10px;
   z-index: 1000;
 }
-
 .scroll-buttons button {
-  padding: 0.5em 1em;
-  background-color: #444;
-  color: white;
+  padding: 0.7em 1.4em;
+  background: #4f8cff;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 0.9em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.1em;
+  box-shadow: 0 2px 10px rgba(79,140,255,0.18);
+  transition: background 0.2s, transform 0.2s;
 }
-
 .scroll-buttons button:hover {
-  background-color: #222;
+  background: #3761a8;
+  transform: translateY(-2px) scale(1.05);
 }
 
-/* 반응형 조정 (그리드가 이미 Bootstrap 기준으로 작동하므로 최소 보완만) */
+/* =========================
+   반응형 조정
+   ========================= */
 @media (max-width: 900px) {
+  main.container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .tool-container {
+    gap: 1em;
+  }
   .video-container {
     padding-bottom: 56.25%;
   }
-
   .scroll-buttons {
     right: 10px;
     bottom: 20px;
+  }
+  .tool-card,
+  .card {
+    min-width: 100%;
+    margin-bottom: 1em;
   }
 }
 
@@ -107,18 +303,19 @@ form textarea {
     display: flex;
     align-items: stretch;
   }
-
   .equal-height > .col-lg-9,
   .equal-height > .col-lg-3 {
     display: flex;
     flex-direction: column;
   }
-
   .equal-height .card {
     flex-grow: 1;
   }
 }
 
+/* =========================
+   네비게이션 고정
+   ========================= */
 .navbar-fixed {
   position: fixed;
   top: 0;
