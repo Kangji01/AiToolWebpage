@@ -1,4 +1,4 @@
-# AI Coding Tools Hub
+# AI SQUARE
 
 AI 코딩 도구를 소개하고, 사용자 리뷰와 별점 평가를 통해 비교할 수 있는 웹사이트입니다.  
 HTML, CSS, JavaScript, Bootstrap만을 사용하여 제작되었으며, 반응형 레이아웃과 로컬 리뷰 저장 기능을 제공합니다.
