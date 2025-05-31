@@ -18,7 +18,7 @@ const tools = [
     link: "https://www.cursor.so",
     rating: 4.7,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2"
+    videoUrl: "https://www.cursor.com/assets/landing/tab-video-dark.mp4"
   },
   {
     id: 3,
@@ -74,7 +74,7 @@ const tools = [
     id: 8,
     name: "DeepCode",
     description: "AI 기반 코드 리뷰 및 버그 탐지 도구.",
-    image: "https://deepcode.ai/favicon.ico",
+    image: "https://www.softwidesec.com/wp-content/uploads/2024/06/o9Ha4bVC_400x400-300x300.jpg",
     link: "https://www.deepcode.ai/",
     rating: 4.1,
     baseCount: 10,
@@ -83,12 +83,12 @@ const tools = [
   {
     id: 9,
     name: "Codex",
-    description: "OpenAI의 AI 모델을 활용한 코드 생성 도구.",
-    image: "https://openai.com/favicon.ico",
-    link: "https://openai.com/research/codex",
+    description: "OpenAI의 코드 생성 도구. GitHub 저장소와 연결되어 코드베이스를 기반한 지능형 도구",
+    image: "https://conserto.pro/wp-content/uploads/2022/11/microsoftteams-image-56.png",
+    link: "https://openai.com/codex/",
     rating: 4.0,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_9"
+    videoUrl: "https://openai.com/index/introducing-codex/?video=1084810944"
   },
   {
     id: 10,
@@ -157,15 +157,20 @@ if (detailSection) {
     let videoEmbed = "";
     if (tool.videoUrl) {
       if (tool.videoUrl.includes("youtube.com")) {
+        // YouTube 자동재생: autoplay=1, mute=1(자동재생 정책)
+        const autoUrl = tool.videoUrl.includes("?")
+          ? tool.videoUrl + "&autoplay=1&mute=1"
+          : tool.videoUrl + "?autoplay=1&mute=1";
         videoEmbed = `
           <div class="video-container text-center my-3">
             <iframe width="100%" height="315" src="${tool.videoUrl}" frameborder="0" allowfullscreen></iframe>
           </div>
         `;
       } else {
+       // 일반 비디오 자동재생: autoplay, muted, playsinline 속성 추가
         videoEmbed = `
           <div class="video-container text-center my-3">
-            <video controls width="100%">
+            <video controls autoplay muted playsinline width="100%">
               <source src="${tool.videoUrl}" type="video/mp4">
               지원되지 않는 영상 형식입니다.
             </video>
