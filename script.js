@@ -28,7 +28,7 @@ const tools = [
     link: "https://openai.com/chatgpt",
     rating: 4.3,
     baseCount: 10,  
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3"
+    videoUrl: "https://www.youtube.com/embed?v=NO7Uo2ii1Sw&list=PLOXw6I10VTv8aE6_cu4b9J_VaraH1kYMo&index=4"
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const tools = [
     link: "https://replit.com/",
     rating: 3.4,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_5"
+    videoUrl: "https://www.youtube.com/embed/aWBiZc5XKJM?si=HabhmyfLboHsqCWo"
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const tools = [
     link: "https://windsurf.com/",
     rating: 3.6,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6"
+    videoUrl: "https://exafunction.github.io//public/videos/cascade/cascade_context_awareness.mp4"
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const tools = [
     link: "https://visualstudio.microsoft.com/services/intellicode/",
     rating: 3.2,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_7"
+    videoUrl: "https://www.youtube.com/embed/aEsrpLa_OMs?si=_qFIKnNdTi7upoFm"
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const tools = [
     link: "https://www.deepcode.ai/",
     rating: 4.1,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_8"
+    videoUrl: "https://www.youtube.com/embed/PctccHRjm_w?si=_Bg8iGYBURPrsc28"
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const tools = [
     link: "https://openai.com/codex/",
     rating: 4.0,
     baseCount: 10,
-    videoUrl: "https://openai.com/index/introducing-codex/?video=1084810944"
+    videoUrl: "https://www.youtube.com/embed/FUq9qRwrDrI?si=eyxovO66OndcUTrK"
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ const tools = [
     link: "https://www.tabnine.com/",
     rating: 3.9,
     baseCount: 10,
-    videoUrl: "https://www.youtube.com/embed/VIDEO_ID_10"
+    videoUrl: "https://d3monxcmeifzlf.cloudfront.net/wp-content/uploads/2025/03/Onboarding-Planning-VEED-1.mp4"
   }
 ];
 
