@@ -58,3 +58,47 @@ document.getElementById("searchInput").addEventListener("input", function () {
     card.style.display = text.includes(keyword) ? "block" : "none";
   });
 });
+
+// 맨 위/아래 버튼
+document.getElementById("scroll-top")?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+document.getElementById("scroll-bottom")?.addEventListener("click", () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+});
+
+// 스크롤 위치 따라 버튼 보이기/숨기기
+window.addEventListener("scroll", () => {
+  const scrollTopBtn = document.getElementById("scroll-top");
+  const scrollBottomBtn = document.getElementById("scroll-bottom");
+  const scrolled = window.scrollY;
+  const bottomBuffer = 300;
+  if (scrollTopBtn) scrollTopBtn.style.display = scrolled > 300 ? "block" : "none";
+  if (scrollBottomBtn) {
+    scrollBottomBtn.style.display = (scrolled < document.body.scrollHeight - window.innerHeight - bottomBuffer) ? "block" : "none";
+  }
+});
+
+// 네비게이션 바 스크롤 시 숨기기/보이기
+let lastScrollY = window.scrollY;
+const navbar = document.getElementById('main-navbar');
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const headerBottom = header.getBoundingClientRect().bottom;
+
+  if (headerBottom <= 0) {
+    // 헤더가 안 보이면 nav를 fixed로 상단에 고정
+    navbar.classList.add('navbar-fixed');
+    if (window.scrollY > lastScrollY) {
+      navbar.style.transform = 'translateY(-100%)';
+    } else {
+      navbar.style.transform = 'translateY(0)';
+    }
+  } else {
+    // 헤더가 보이면 nav를 일반 흐름으로 (fixed 해제)
+    navbar.classList.remove('navbar-fixed');
+    navbar.style.transform = 'translateY(0)';
+  }
+  lastScrollY = window.scrollY;
+});
