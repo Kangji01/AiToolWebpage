@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI SQUARE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo-title">
+        <img src="logo.png" alt="AI SQUARE 로고" class="logo-img" />
+        AI SQUARE
+      </h1>
+      <p>다양한 AI 도구 추천 및 비교 플랫폼</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="AI 도구를 검색해보세요..." />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🧠 범용형 AI</h2>
+      <div class="card-container" id="general-list"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">✍️ 콘텐츠 생성 AI</h2>
+      <div class="card-container" id="writing-list"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🎨 이미지 생성 AI</h2>
+      <div class="card-container" id="image-list"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🧑‍💼 업무 생산성 AI</h2>
+      <div class="card-container" id="productivity-list"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">📊 코딩 보조 AI</h2>
+      <div class="card-container" id="coding-list"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🎙️ 음성/오디오 AI</h2>
+      <div class="card-container" id="voice-list"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title">도구 이름</h2>
+      <p id="modal-description">상세 설명</p>
+      <div class="modal-video">
+        <iframe id="modal-video" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <a id="modal-link" href="#" class="visit-button" target="_blank">🌍 공식 웹사이트 바로가기</a>
+
+      <div class="review-section">
+          <h3>리뷰 및 별점</h3>
+          <div id="averageRating" style="text-align:center; font-size:1.1rem; margin-bottom:10px; color:#555;">
+            평균 별점: 아직 없음
+          </div>
+          <div class="stars" data-rating="0">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+          </div>
+          <textarea id="reviewText" placeholder="리뷰를 작성해주세요..." rows="4"></textarea>
+          <button id="submitReview">리뷰 제출</button>
+          <div id="reviewsList">
+              </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AI SQUARE. Kyonggi University</p>
+    </div>
+  </footer>
+
+  <div class="scroll-buttons">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">	⮝</button>
+    <button onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });">⮟</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

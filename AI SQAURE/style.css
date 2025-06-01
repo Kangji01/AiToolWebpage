@@ -1,0 +1,382 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* One True Layout */
+header, footer {
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#ai-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card li {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+footer {
+  background-color: #ddd;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  padding-top: 40px;
+}
+
+#general-ai {
+  margin-top: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+
+.web_logo {
+  width: 25px;
+  height: auto;
+  margin-right: 5px;
+  vertical-align: middle;
+  transform: translateY(-1.5px);
+}
+
+.search-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px 30px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 20px 25px;
+  font-size: 1.3rem;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-video {
+  margin-top: 20px;
+}
+
+.visit-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #000000, #4b4f50);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  transform: translateY(0);
+  align-self: center;
+}
+
+.visit-button:hover {
+  background: linear-gradient(90deg, #4b4b4b, #555252);
+  box-shadow: 0 10px 25px rgba(247, 247, 247, 0.5);
+  transform: translateY(-3px);
+}
+
+.visit-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.scroll-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.scroll-buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(145deg, #000000, #050505);
+  color: white;
+  font-size: 1.3em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scroll-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 리뷰/별점 */
+.review-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: left;
+}
+
+.review-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 별점시스템 */
+.stars {
+  text-align: center;
+  font-size: 2rem;
+  color: #ccc;
+  margin-bottom: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.stars .star {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.stars .star.selected,
+.stars .star:hover,
+.stars .star:hover ~ .star {
+  color: #ffcc00;
+}
+
+/* 리뷰시스템 */
+
+#reviewText {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  resize: vertical;
+  caret-color: transparent; 
+}
+
+#submitReview {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submitReview:hover {
+  background-color: #0056b3;
+}
+
+#reviewsList {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto; 
+  padding-right: 10px;
+}
+
+.review-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.review-item .review-rating {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.review-item .review-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.review-item .review-date {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.average-stars {
+  margin-top: 8px;
+  color: #b1922d;
+  font-size: 1rem;
+}
