@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI SQUARE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo-title">
+        <img src="logo.png" alt="AI SQUARE 로고" class="logo-img" />
+        AI SQUARE
+      </h1>
+      <p>다양한 AI 도구 추천 및 비교 플랫폼</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="AI 도구를 검색해보세요..." />
+      </div>
+    </section>
+
+    <section id="general-ai">
+    <h2 class="section-title">🧠 범용형 AI 모음</h2>
+    <div class="card-container">
+      <div class="card" data-video="https://www.youtube.com/embed/DQacCB9tDaw">
+        <h3><img src="img/chatgpt.png" class="web_logo" />ChatGPT</h3>
+        <p>OpenAI가 만든 GPT 언어모델</p>
+        <ul>
+          <li>💵 가격: 무료 / GPT-4 유료 (20달러/월)</li>
+          <li>✨ 특징: 확장성, 고급 플러그인</li>
+          <li>👍 장점: 다양한 용도에 적합</li>
+          <li>👎 단점: 일부 기능 유료 제한</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><img src="img/gemini.png" class="web_logo" />Gemini</h3>
+        <p>Google의 AI 언어모델</p>
+        <ul>
+          <li>💵 가격: 무료 / Pro 요금제 존재</li>
+          <li>✨ 특징: Google 서비스와 통합</li>
+          <li>👍 장점: 구글 문서 활용 용이</li>
+          <li>👎 단점: 일부 언어 품질 부족</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><img src="img/perplexity.png" class="web_logo" />Perplexity</h3>
+        <p>검색 기반의 AI 답변 시스템</p>
+        <ul>
+          <li>💵 가격: 무료 / Pro 20달러</li>
+          <li>✨ 특징: 출처 제공, 실시간 검색</li>
+          <li>👍 장점: 정보 투명성</li>
+          <li>👎 단점: 검색 품질 편차</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><img src="img/claude.png" class="web_logo" />Claude</h3>
+        <p>Anthropic이 만든 친화적 AI</p>
+        <ul>
+          <li>💵 가격: 무료 / Pro 플랜 존재</li>
+          <li>✨ 특징: 장문 이해에 강함</li>
+          <li>👍 장점: 대화 톤 부드러움</li>
+          <li>👎 단점: 한국어 지원 약간 부족</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing-ai">
+  <h2 class="section-title">✍️ 글쓰기 / 콘텐츠 생성</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3><img src="img/notion.png" class="web_logo" />Notion AI</h3>
+      <p>문서 작성과 요약에 강한 생산성 도구</p>
+      <ul>
+        <li>💵 가격: Notion 유료 플랜 포함</li>
+        <li>✨ 특징: 문서 요약, 아이디어 제안</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Copy.ai</h3>
+      <p>마케팅용 글, 블로그 콘텐츠 자동 생성</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료 플랜</li>
+        <li>✨ 특징: 문체 선택 가능</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/jasper.png" class="web_logo" />Jasper</h3>
+      <p>SEO 최적화 콘텐츠 제작에 강력</p>
+      <ul>
+        <li>💵 가격: 유료</li>
+        <li>✨ 특징: 마케팅 전문가용</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="image-ai">
+  <h2 class="section-title">🎨 이미지 생성 AI</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3><img src="img/midjourney.png" class="web_logo" />Midjourney</h3>
+      <p>예술 스타일의 고품질 이미지 생성</p>
+      <ul>
+        <li>💵 가격: 유료</li>
+        <li>✨ 특징: 디스코드 기반</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/dall_e.png" class="web_logo" />DALL·E</h3>
+      <p>텍스트 기반 이미지 생성, OpenAI 제공</p>
+      <ul>
+        <li>💵 가격: 무료 / 크레딧 기반</li>
+        <li>✨ 특징: GPT와 통합 가능</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/leonardo.png" class="web_logo" />Leonardo AI</h3>
+      <p>게임/캐릭터 아트에 특화된 생성형 도구</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료 플랜</li>
+        <li>✨ 특징: 빠른 생성 속도</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="productivity-ai">
+  <h2 class="section-title">🧑‍💼 업무 생산성 도구</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3><img src="img/gamma.png" class="web_logo" />Gamma.app</h3>
+      <p>프레젠테이션 자동 제작 플랫폼</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료</li>
+        <li>✨ 특징: Notion 스타일 인터페이스</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/fireflies.png" class="web_logo" />Fireflies.ai</h3>
+      <p>회의 음성 자동 기록 및 요약</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료</li>
+        <li>✨ 특징: Zoom, Google Meet 연동</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/Slides.png" class="web_logo" />SlidesAI</h3>
+      <p>Google Slides에서 슬라이드 자동 생성</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료</li>
+        <li>✨ 특징: 프롬프트 기반 슬라이드</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="coding-ai">
+  <h2 class="section-title">📊 데이터 분석 / 코딩 보조</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3><img src="img/cursor.png" class="web_logo" />Cursor AI</h3>
+      <p>AI가 탑재된 VS Code 기반 IDE</p>
+      <ul>
+        <li>💵 가격: 유료</li>
+        <li>✨ 특징: GPT 기반 코드 자동화</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/codium.png" class="web_logo" />Codeium</h3>
+      <p>코드 자동 완성과 보완 기능 제공</p>
+      <ul>
+        <li>💵 가격: 무료</li>
+        <li>✨ 특징: 다양한 언어 지원</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/koodo.png" class="web_logo" />Koodo Reader</h3>
+      <p>PDF 논문 요약 및 질의응답 가능</p>
+      <ul>
+        <li>💵 가격: 무료</li>
+        <li>✨ 특징: ChatGPT 플러그인 연동</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="voice-ai">
+  <h2 class="section-title">🎙️ 오디오 / 음성 AI</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3><img src="img/elevenlabs.png" class="web_logo" />ElevenLabs</h3>
+      <p>자연스러운 AI 음성 합성 도구</p>
+      <ul>
+        <li>💵 가격: 무료 / 유료</li>
+        <li>✨ 특징: 다양한 목소리 지원</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/voicemod.png" class="web_logo" />Voicemod</h3>
+      <p>실시간 음성 변조 효과 제공</p>
+      <ul>
+        <li>💵 가격: 부분 무료</li>
+        <li>✨ 특징: 스트리머용 인기</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><img src="img/descript.png" class="web_logo" />Descript</h3>
+      <p>오디오 편집 및 AI 나레이션 생성</p>
+      <ul>
+        <li>💵 가격: 유료</li>
+        <li>✨ 특징: 텍스트 기반 편집</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modal-title">도구 이름</h2>
+    <p id="modal-description">상세 설명</p>
+    <div class="modal-video">
+      <iframe id="modal-video" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <a id="modal-link" href="#" class="visit-button" target="_blank">🌍 공식 웹사이트 바로가기</a>
+  </div>
+</div>
+</div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AI SQUARE. 모든 권리 보유.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
