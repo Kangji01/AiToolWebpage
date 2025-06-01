@@ -308,7 +308,7 @@ const modalVideo = document.getElementById("modal-video");
 const modalLink = document.getElementById("modal-link");
 const closeBtn = document.querySelector(".close-btn");
 
-// 리뷰 기능능
+// 리뷰 기능
 const stars = document.querySelector(".stars");
 const reviewTextarea = document.getElementById("reviewText");
 const submitReviewBtn = document.getElementById("submitReview");
@@ -343,6 +343,7 @@ function displayReviews(toolId) {
   }
 }
 
+// 이전 오류 수정: window.onclick의 닫는 괄호 위치 수정
 if (modal && modalTitle && modalDesc && modalVideo && modalLink && closeBtn && stars && reviewTextarea && submitReviewBtn && reviewsList) {
   closeBtn.onclick = () => {
     modal.style.display = "none";
@@ -355,7 +356,8 @@ if (modal && modalTitle && modalDesc && modalVideo && modalLink && closeBtn && s
       modal.style.display = "none";
       modalVideo.src = "";
       currentToolId = null;
-  };
+    }
+  }; // 여기가 원래 오류의 원인이었던 닫는 괄호입니다.
 
   stars.addEventListener("mouseover", function(e) {
     if (e.target.classList.contains("star")) {
@@ -413,4 +415,4 @@ if (modal && modalTitle && modalDesc && modalVideo && modalLink && closeBtn && s
       alert("별점과 리뷰 내용을 모두 입력해주세요.");
     }
   });
-}}
+}
