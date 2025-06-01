@@ -343,7 +343,6 @@ function displayReviews(toolId) {
   }
 }
 
-// 이전 오류 수정: window.onclick의 닫는 괄호 위치 수정
 if (modal && modalTitle && modalDesc && modalVideo && modalLink && closeBtn && stars && reviewTextarea && submitReviewBtn && reviewsList) {
   closeBtn.onclick = () => {
     modal.style.display = "none";
@@ -357,7 +356,7 @@ if (modal && modalTitle && modalDesc && modalVideo && modalLink && closeBtn && s
       modalVideo.src = "";
       currentToolId = null;
     }
-  }; // 여기가 원래 오류의 원인이었던 닫는 괄호입니다.
+  };
 
   stars.addEventListener("mouseover", function(e) {
     if (e.target.classList.contains("star")) {
